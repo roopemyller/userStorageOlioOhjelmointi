@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int degreeId = degreeGroup.getCheckedRadioButtonId();
                 degree = findViewById(degreeId);
-                System.out.println("Uusi käyttäjä " + firstname.getText().toString() + " " + lastname.getText().toString() + " " + email.getText().toString() + " " + degree.getText().toString());
                 s.addUser(new User(firstname.getText().toString(), lastname.getText().toString(), email.getText().toString(), degree.getText().toString()));
             }
         });
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     public void checkButton(View view){
         int degreeId = degreeGroup.getCheckedRadioButtonId();
         degree = findViewById(degreeId);
-        Toast.makeText(this, "Selected Radio Button: " + degree.getText(), Toast.LENGTH_SHORT);
+        Toast.makeText(this, degree.getText(), Toast.LENGTH_SHORT);
     }
     private void changeActivity(){
         Intent intent = new Intent(this, SecondActivity.class);
